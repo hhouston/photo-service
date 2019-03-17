@@ -1,0 +1,57 @@
+{
+  "name": "photo-service",
+  "version": "0.0.1",
+  "description": "service for photo webpage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "babel-node server.js"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/*.spec.js",
+      "test/",
+      "tmp/"
+    ]
+  },
+  "engines": {
+    "node": ">=10.13.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hhouston/photo-service.git"
+  },
+  "keywords": [
+    "photo"
+  ],
+  "author": "hunter houston",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hhouston/photo-service/issues"
+  },
+  "homepage": "https://github.com/hhouston/photo-service#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/register": "^7.0.0"
+  }
+}
