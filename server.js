@@ -1,5 +1,4 @@
 var express = require('express');
-// var graphqlHTTP = require('express-graphql');
 import graphqlHTTP from 'express-graphql'
 var { buildSchema } = require('graphql');
 
@@ -7,8 +6,7 @@ var { buildSchema } = require('graphql');
 const schema = buildSchema(`
   type Query {
     hello: String,
-    hey: String,
-    teams:
+    hey: String
   }
 `)
 
