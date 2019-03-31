@@ -6,7 +6,7 @@ import cors from 'cors'
 
 import { ApolloServer, gql } from 'apollo-server'
 
-import { Schema } from './graphql'
+import { Schema } from './lib/graphql'
 
 console.log('schema: ', Schema);
 

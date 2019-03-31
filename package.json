@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "babel-node server.js"
+    "server": "babel-node server.js",
+    "server:watch": "nodemon --exec babel-node server.js"
   },
   "babel": {
     "presets": [
@@ -49,7 +50,8 @@
     "express-graphql": "^0.7.1",
     "graphql": "^14.1.1",
     "graphql-tag": "^2.10.1",
-    "graphql-tools": "^4.0.4"
+    "graphql-tools": "^4.0.4",
+    "nodemon": "^1.18.10"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
