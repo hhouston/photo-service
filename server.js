@@ -6,9 +6,13 @@ import cors from 'cors'
 
 import { ApolloServer, gql } from 'apollo-server'
 
-import { Schema } from './lib/graphql'
+import { Schema, Photo } from './lib/graphql'
+import { Query, resolvers } from './lib/graphql'
 
-console.log('schema: ', Schema);
+console.log('Photo: ', Photo);
+console.log('Query: ', Query);
+console.log('resolvers: ', resolvers);
+// console.log('schema: ', Schema);
 
 // var { buildSchema } = require('graphql');
 
@@ -40,9 +44,10 @@ console.log('schema: ', Schema);
 //   Query
 // ]
 
-// const schema = makeExecutableSchema({
-//   typeDefs
-// })
+const schema = makeExecutableSchema({
+  typeDefs: [Query, Photo],
+  resolvers
+})
 //
 // // The root provides a resolver function for each API endpoint
 // const root = {
@@ -72,16 +77,6 @@ console.log('schema: ', Schema);
 // app.listen(4000);
 // console.log('Running a GraphQL API server at localhost:4000/graphql');
 
-const books = [
-  {
-    title: 'Harry Potter and the Chamber of Secrets',
-    author: 'J.K. Rowling',
-  },
-  {
-    title: 'Jurassic Park',
-    author: 'Michael Crichton',
-  },
-]
 
 // const typeDefs = [
 //   Query
@@ -99,11 +94,6 @@ const books = [
 
 // Resolvers define the technique for fetching the types in the
 // schema.  We'll retrieve books from the "books" array above.
-const resolvers = {
-  Query: {
-    books: () => books,
-  }
-}
 
 const server = new ApolloServer({
   schema: Schema
