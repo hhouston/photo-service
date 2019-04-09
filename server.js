@@ -7,8 +7,8 @@ import cors from 'cors'
 
 import { ApolloServer, gql } from 'apollo-server-koa'
 
-import { Schema, Photo } from './lib/graphql'
-import { Query, resolvers } from './lib/graphql'
+import { Schema } from './lib/graphql'
+import { Query, Photo } from './lib/graphql'
 
 import { MongoDB } from './lib/mongodb'
 
@@ -18,41 +18,40 @@ import { scopePerRequest } from 'awilix-koa'
 import { createDependencies } from './lib'
 import { MongoService } from './lib/services'
 
-console.log('service: ', MongoService)
+// console.log('typeDefs: ', typeDefs)
 const dependencies = createDependencies()
-console.log('depppp: ', dependencies)
+console.log('dependencies: ', dependencies.resolve('Query'))
+console.log('graphql: ', Query, Photo)
 
-const schema = makeExecutableSchema({
-  typeDefs: [Query, Photo],
-  resolvers
-})
+const { typeDefs } = Query
+const { resolvers } = Query
 
-console.log('schema::: %j', Schema);
+// const schema = makeExecutableSchema({
+//   typeDefs: [Query, Photo], // function
+//   resolvers // dep function
+// })
 
-const server = new ApolloServer({
-  schema: Schema
-})
+console.log('typeDefs::: ', typeDefs);
+
 
 const app = new Koa();
 // app.use(cors())
 
+// console.log('resolvers: ', resolvers);
+// app.use(scopePerRequest(dependencies))
 
-app.use(scopePerRequest(dependencies))
 
-// app.use((ctx, next) => {
-//   // ctx.scope = container.createScope()
-//
-//   ctx.scope.register({
-//
-//     dependencies
-//   })
-//
-//   return next()
-// })
+
+const server = new ApolloServer({
+  typeDefs,
+  resolvers: { Query: dependencies.resolve('Query') }
+})
 
 console.log('apppp', app)
 
 server.applyMiddleware({ app })
+
+//container.resolver(server.applyMiddleware({ app }))
 
 
 app.listen({ port: 4000 }, () =>
