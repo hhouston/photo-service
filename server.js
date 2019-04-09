@@ -8,7 +8,7 @@ import cors from 'cors'
 import { ApolloServer, gql } from 'apollo-server-koa'
 
 import { Schema } from './lib/graphql'
-import { Query, Photo } from './lib/graphql'
+import { Query, Photo, typeDefs } from './lib/graphql'
 
 import { MongoDB } from './lib/mongodb'
 
@@ -23,7 +23,7 @@ const dependencies = createDependencies()
 console.log('dependencies: ', dependencies.resolve('Query'))
 console.log('graphql: ', Query, Photo)
 
-const { typeDefs } = Query
+// const { typeDefs } = Query
 const { resolvers } = Query
 
 // const schema = makeExecutableSchema({

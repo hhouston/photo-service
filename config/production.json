@@ -1,0 +1,9 @@
+{
+  "port": 9000,
+  "tableNames": {
+    "photos": "Photos",
+    "organizations": "Organizations",
+    "teams": "Teams",
+    "events": "Events"
+  }
+}
