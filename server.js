@@ -6,7 +6,7 @@ import cors from '@koa/cors'
 import { ApolloServer, gql } from 'apollo-server-koa'
 
 import { Schema } from './lib/graphql'
-import { Query, Photo, typeDefs } from './lib/graphql'
+import { Photo, typeDefs } from './lib/graphql'
 
 import { MongoDB } from './lib/mongodb'
 
@@ -23,7 +23,10 @@ app.use(cors())
 
 const server = new ApolloServer({
   typeDefs,
-  resolvers: { Query: dependencies.resolve('Query') }
+  resolvers: { 
+      Query: dependencies.resolve('Query'),
+      Mutation: dependencies.resolve('Mutation')
+   }
 })
 
 server.applyMiddleware({ app })
