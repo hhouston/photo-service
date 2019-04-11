@@ -1,9 +1,7 @@
-import express from 'express'
 import Koa from 'koa'
 import graphqlHTTP from 'express-graphql'
-// import gql from 'graphql-tag'
 import { makeExecutableSchema } from 'graphql-tools'
-import cors from 'cors'
+import cors from '@koa/cors'
 
 import { ApolloServer, gql } from 'apollo-server-koa'
 
@@ -21,7 +19,7 @@ import { MongoService } from './lib/services'
 const dependencies = createDependencies()
 
 const app = new Koa();
-// app.use(cors())
+app.use(cors())
 
 const server = new ApolloServer({
   typeDefs,
