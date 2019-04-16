@@ -62,6 +62,7 @@
     "apollo-server-koa": "^2.4.8",
     "awilix": "^4.2.1",
     "awilix-koa": "^3.1.0",
+    "aws-cloudfront-sign": "^2.2.0",
     "config": "^3.1.0",
     "graphql": "^14.1.1",
     "graphql-tag": "^2.10.1",
@@ -79,6 +80,7 @@
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.3.4",
     "@babel/register": "^7.0.0",
+    "del": "^4.1.0",
     "del-cli": "^1.1.0"
   }
 }
