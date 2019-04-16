@@ -8,9 +8,6 @@ import { scopePerRequest } from 'awilix-koa'
 
 import { typeDefs } from './lib/graphql'
 
-import { MongoDB } from './lib/mongodb'
-
-
 import { createDependencies } from './lib'
 import { MongoService } from './lib/services'
 
