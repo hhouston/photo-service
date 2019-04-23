@@ -19,6 +19,7 @@
     "build:server": "babel --source-maps --ignore='**/*.spec.js' --out-dir dist/server.js server.js",
     "dist": "npm-run-all build",
     "server": "babel-node server.js",
+    "server:prod": "ENV=PRODUCTION nodemon --exec babel-node server.js",
     "server:watch": "nodemon --exec babel-node server.js"
   },
   "babel": {
