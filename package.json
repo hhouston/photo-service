@@ -16,10 +16,10 @@
     "prebuild": "npm-run-all clean",
     "build:index": "babel --source-maps --out-dir dist index.js",
     "build:lib": "babel --source-maps --ignore='**/*.spec.js' --out-dir dist/lib lib",
-    "build:server": "babel --source-maps --ignore='**/*.spec.js' --out-dir dist/server.js server.js",
+    "build:server": "babel --source-maps --ignore='**/*.spec.js' --out-file dist/server.js server.js",
     "dist": "npm-run-all build",
     "server": "babel-node server.js",
-    "server:prod": "ENV=PRODUCTION nodemon --exec babel-node server.js",
+    "server:prod": "pm2 start dist/server.js",
     "server:watch": "nodemon --exec babel-node server.js"
   },
   "babel": {
