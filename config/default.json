@@ -1,0 +1,14 @@
+{
+  "port": 9000,
+  "mongoUrl": "mongodb://localhost:27017/",
+  "tableNames": {
+    "photos": "Photos",
+    "organizations": "Organizations",
+    "teams": "Teams",
+    "events": "Events"
+  },
+  "cloudfront": {
+    "baseUrl": "https://d3gaqejqo5el7.cloudfront.net",
+    "securityKey": null
+  }
+}
