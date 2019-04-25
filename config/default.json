@@ -1,6 +1,6 @@
 {
   "port": 9000,
-  "mongoUrl": "mongodb://172.31.77.55:27017/",
+  "mongoUrl": "mongodb://34.206.11.164:27017/",
   "tableNames": {
     "photos": "Photos",
     "organizations": "Organizations",
