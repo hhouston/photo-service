@@ -1,6 +1,6 @@
 {
   "port": 80,
-  "mongoUrl": "mongodb://localhost:27017/",
+  "xmongoUrl": "mongodb://localhost:27017/",
   "tableNames": {
     "photos": "Photos",
     "organizations": "Organizations",
