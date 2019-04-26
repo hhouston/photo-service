@@ -1,7 +1,12 @@
 {
   "port": 80,
-  "xmongoUrl": "mongodb://localhost:27017/",
-  "tableNames": {
+  "mongo": {
+    "url": "mongodb://localhost:27017",
+    "auth": {
+      "user": "test",
+      "password": "pass"
+    },
+    "tableNames": {
     "photos": "Photos",
     "organizations": "Organizations",
     "teams": "Teams",
