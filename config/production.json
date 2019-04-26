@@ -5,8 +5,9 @@
     "auth": {
       "user": "test",
       "password": "pass"
-    },
-    "tableNames": {
+    }
+  },
+  "tableNames": {
     "photos": "Photos",
     "organizations": "Organizations",
     "teams": "Teams",
