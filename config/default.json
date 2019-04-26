@@ -16,5 +16,9 @@
   "cloudfront": {
     "baseUrl": "https://d3gaqejqo5el7.cloudfront.net",
     "securityKey": null
+  },
+  "s3": {
+    "accessKeyId": null,
+    "secretAccessKey": null
   }
 }
