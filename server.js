@@ -3,6 +3,8 @@ import { makeExecutableSchema } from 'graphql-tools'
 import { ApolloServer, gql } from 'apollo-server-koa'
 import cors from '@koa/cors'
 
+import config from 'config'
+
 import { createContainer } from 'awilix'
 import { scopePerRequest } from 'awilix-koa'
 
@@ -13,7 +15,9 @@ import { MongoService } from './lib/services'
 
 const dependencies = createDependencies()
 
-const app = new Koa();
+const app = new Koa()
+const jwtToken = config.get('jwtToken')
+const burstCoupon = config.get('burstCoupon')
 app.use(cors())
 
 const server = new ApolloServer({

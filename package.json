@@ -69,6 +69,7 @@
     "graphql": "^14.1.1",
     "graphql-tag": "^2.10.1",
     "graphql-tools": "^4.0.4",
+    "jsonwebtoken": "^8.5.1",
     "koa": "^2.7.0",
     "mongodb": "^3.2.2",
     "nodemon": "^1.18.10",
