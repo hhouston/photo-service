@@ -1,4 +1,6 @@
 import Koa from 'koa'
+import { apolloUploadKoa } from 'apollo-upload-server'
+
 import { makeExecutableSchema } from 'graphql-tools'
 import { ApolloServer, gql } from 'apollo-server-koa'
 import cors from '@koa/cors'
@@ -15,6 +17,7 @@ const dependencies = createDependencies()
 
 const app = new Koa();
 app.use(cors())
+app.use(apolloUploadKoa({ maxFileSize: 10000000, maxFiles: 10 }))
 
 const server = new ApolloServer({
   typeDefs,

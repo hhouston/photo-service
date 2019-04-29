@@ -61,6 +61,7 @@
     "@meltwater/mlabs-logger": "^5.3.0",
     "apollo-server": "^2.4.8",
     "apollo-server-koa": "^2.4.8",
+    "apollo-upload-server": "^7.1.0",
     "awilix": "^4.2.1",
     "awilix-koa": "^3.1.0",
     "aws-sdk": "^2.443.0",
