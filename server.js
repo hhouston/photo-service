@@ -20,7 +20,6 @@ const app = new Koa()
 const jwtToken = config.get('jwtToken')
 const burstCoupon = config.get('burstCoupon')
 app.use(cors())
-// app.use(apolloUploadKoa({ maxFileSize: 10000000, maxFiles: 10 }))
 
 const server = new ApolloServer({
   typeDefs,
@@ -32,16 +31,9 @@ const server = new ApolloServer({
    formatError: error => {
       console.log(error);
       return new Error('Internal server error');
-      // Or, you can delete the exception information
-      // delete error.extensions.exception;
-      // return error;
     },
    uploads: {
-      // Limits here should be stricter than config for surrounding
-      // infrastructure such as Nginx so errors can be handled elegantly by
-      // graphql-upload:
-      // https://github.com/jaydenseric/graphql-upload#type-uploadoptions
-      maxFileSize: 10000000, // 10 MB
+      maxFileSize: 20000000,
       maxFiles: 20
     }
 })
