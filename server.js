@@ -33,8 +33,8 @@ const server = new ApolloServer({
       return new Error('Internal server error');
     },
    uploads: {
-      maxFileSize: 20000000,
-      maxFiles: 20
+      maxFileSize: 2000000000,
+      maxFiles: 30
     }
 })
 
