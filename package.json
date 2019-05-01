@@ -1,6 +1,6 @@
 {
   "name": "photo-service",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "service for photo webpage",
   "main": "index.js",
   "files": [
