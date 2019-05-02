@@ -26,6 +26,7 @@ const server = new ApolloServer({
   resolvers: {
       Query: dependencies.resolve('Query'),
       Mutation: dependencies.resolve('Mutation'),
+      Photo: dependencies.resolve('Photo'),
       Upload: GraphQLUpload
    },
    formatError: error => {
