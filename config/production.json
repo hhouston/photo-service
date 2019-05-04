@@ -7,12 +7,6 @@
       "password": "pass"
     }
   },
-  "tableNames": {
-    "photos": "Photos",
-    "organizations": "Organizations",
-    "teams": "Teams",
-    "events": "Events"
-  },
   "cloudfront": {
     "baseUrl": "https://d3gaqejqo5el7.cloudfront.net",
     "securityKey": null
